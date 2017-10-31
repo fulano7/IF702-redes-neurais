@@ -1,0 +1,57 @@
+CONFIGURACOES DA REDE:
+Camadada intermediaria: Nº Neuronios = 16 | Funcao de ativacao = tanh
+Camadada de saída: Nº Neuronios = 1 | Funcao de ativacao = sigmoid
+Batch: 64 | Optimizer: adam | Funcao de perda = mean_squared_error | Epocas: 100000 | Verboses: 0
+
+random over sampling
+	Matriz de confusão:
+	| 7597.0 2403.0 |
+	| 80.0 95.0 |
+	
+	Train Loss:     0.1268
+	Validation Loss:0.2236
+	Accuracy:       0.7560
+	Recall:         0.5429
+	Precision:      0.0380
+	F1:             0.0711
+	AUROC:          0.6761
+
+regular SMOTE over sampling
+	Matriz de confusão:
+	| 6378.0 3622.0 |
+	| 57.0 118.0 |
+	
+	Train Loss:     0.1596
+	Validation Loss:0.2231
+	Accuracy:       0.6384
+	Recall:         0.6743
+	Precision:      0.0316
+	F1:             0.0603
+	AUROC:          0.6904
+
+borderline1 SMOTE over sampling
+	Matriz de confusão:
+	| 6704.0 3296.0 |
+	| 61.0 114.0 |
+	
+	Train Loss:     0.1562
+	Validation Loss:0.2258
+	Accuracy:       0.6701
+	Recall:         0.6514
+	Precision:      0.0334
+	F1:             0.0636
+	AUROC:          0.6929
+
+borderline2 SMOTE over sampling
+	Matriz de confusão:
+	| 7656.0 2344.0 |
+	| 96.0 79.0 |
+	
+	Train Loss:     0.1044
+	Validation Loss:0.2259
+	Accuracy:       0.7602
+	Recall:         0.4514
+	Precision:      0.0326
+	F1:             0.0608
+	AUROC:          0.6634
+

@@ -1,0 +1,18 @@
+CONFIGURACOES DA REDE:
+Camadada intermediaria: Nº Neuronios = 16 | Funcao de ativacao = tanh
+Camadada de saída: Nº Neuronios = 1 | Funcao de ativacao = sigmoid
+Batch: 64 | Optimizer: adam | Funcao de perda = mean_squared_error | Epocas: 100000 | Verboses: 0
+
+random under sampling
+	Matriz de confusão:
+	| 6041.0 3959.0 |
+	| 58.0 117.0 |
+	
+	Train Loss:     0.1928
+	Validation Loss:0.2228
+	Accuracy:       0.6052
+	Recall:         0.6686
+	Precision:      0.0287
+	F1:             0.0550
+	AUROC:          0.6806
+
