@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import math
 import random
 import numpy as np
@@ -40,9 +43,13 @@ class Treinamento:
         rede.append(self.verboses)
         return rede
        
-        
-    def define_rede(self, neuronios_inter = 16, activation_inter='tanh', neuronios_saida = 1, activation_saida = 'sigmoid',
-                    batch = 64, optimizer_func = 'adam', loss_func='mean_squared_error', epocas = 100000, verboses = 0):
+                          # - Numero de neuronios na camada intermediaria
+    def define_rede(self, neuronios_inter = 450, 
+		    # - Funcao de ativacao
+	            activation_inter='tanh', neuronios_saida = 1, activation_saida = 'sigmoid',
+                    batch = 64, optimizer_func = 'adam', 
+                    # - Funcao de custo
+                    loss_func='mean_squared_error', epocas = 100000, verboses = 0):
         self.neuronios_inter = neuronios_inter
         self.activation_inter = activation_inter
         self.neuronios_saida = neuronios_saida
@@ -68,6 +75,7 @@ class Treinamento:
             # Adiciona a primeira camada escondida contendo 16 neurônios e função de ativação tangente 
             # hiperbólica. Por ser a primeira camada adicionada à rede, precisamos especificar a 
             # dimensão de entrada (número de features do data set).
+	    # - Numero de camadas intermediarias
             classifier.add(Dense(self.neuronios_inter, activation = self.activation_inter, input_dim = self.dimension))
 
             # Adiciona a camada de saída. Como nosso problema é binário, só precisamos de 1 neurônio 
@@ -78,7 +86,10 @@ class Treinamento:
 
             # Compila o modelo especificando o otimizador, a função de custo, e opcionalmente métricas 
             # para serem observadas durante o treinamento.
-            classifier.compile(optimizer = self.optimizer_func, loss = self.loss_func)
+            # - Taxa de aprendizagem
+            # - Otimizador
+            optim = keras.optimizers.Adam(lr=0.01)
+            classifier.compile(optimizer = optim, loss = self.loss_func)
 
             # Treina a rede, especificando o tamanho do batch, o número máximo de épocas, se deseja 
             # parar prematuramente caso o erro de validação não decresça, e o conjunto de validação.

@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8
+
 ## IF702 Redes Neurais
 import time
 import math
